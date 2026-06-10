@@ -1,34 +1,3 @@
-locals {
-  networks = flatten([
-    for i, network in var.networks : [
-      for az in var.availability_zones : {
-        availability_zone = az
-        key               = "${network.name}_${az}"
-        name              = network.name
-        nat_gw            = network.nat_gw
-        new_bits          = network.cidr_netmask - var.vpc_cidr_netmask
-        public            = network.public
-        tgw_attachment    = network.tgw_attachment
-        tags              = network.tags
-      }
-    ]]
-  )
-
-  cidr_subnets = cidrsubnets(aws_vpc_ipam_preview_next_cidr.vpc.cidr, local.networks[*].new_bits...)
-  region       = var.region != null ? var.region : data.aws_region.default.region
-
-  vpc_subnets = [for i, n in local.networks : {
-    availability_zone = n.availability_zone
-    cidr_block        = n.key != null ? local.cidr_subnets[i] : tostring(null)
-    key               = n.key
-    name              = n.name
-    nat_gw            = n.nat_gw
-    public            = n.public
-    tgw_attachment    = n.tgw_attachment
-    tags              = n.tags
-  }]
-}
-
 resource "aws_vpc_ipam_preview_next_cidr" "vpc" {
   region         = var.region
   ipam_pool_id   = var.aws_vpc_ipam_pool

@@ -5,7 +5,7 @@ locals {
 
 module "log_bucket" {
   source  = "schubergphilis/mcaf-s3/aws"
-  version = "~> 2.0.0"
+  version = "~> 3.0.0"
 
   count = local.create_bucket ? 1 : 0
 
@@ -44,14 +44,14 @@ module "log_bucket" {
                 "Service": "delivery.logs.amazonaws.com"
             },
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::${var.s3_flow_logs_configuration.bucket_name}/AWSLogs/${data.aws_caller_identity.default.account_id}/*",
+            "Resource": "arn:aws:s3:::${var.s3_flow_logs_configuration.bucket_name}/AWSLogs/${local.account_id}/*",
             "Condition": {
                 "StringEquals": {
-                    "aws:SourceAccount": "${data.aws_caller_identity.default.account_id}",
+                    "aws:SourceAccount": "${local.account_id}",
                     "s3:x-amz-acl": "bucket-owner-full-control"
                 },
                 "ArnLike": {
-                    "aws:SourceArn": "arn:aws:logs:${local.region}:${data.aws_caller_identity.default.account_id}:*"
+                    "aws:SourceArn": "arn:aws:logs:${local.region}:${local.account_id}:*"
                 }
             }
         },
@@ -65,10 +65,10 @@ module "log_bucket" {
             "Resource": "arn:aws:s3:::${var.s3_flow_logs_configuration.bucket_name}",
             "Condition": {
                 "StringEquals": {
-                    "aws:SourceAccount": "${data.aws_caller_identity.default.account_id}"
+                    "aws:SourceAccount": "${local.account_id}"
                 },
                 "ArnLike": {
-                    "aws:SourceArn": "arn:aws:logs:${local.region}:${data.aws_caller_identity.default.account_id}:*"
+                    "aws:SourceArn": "arn:aws:logs:${local.region}:${local.account_id}:*"
                 }
             }
         }
