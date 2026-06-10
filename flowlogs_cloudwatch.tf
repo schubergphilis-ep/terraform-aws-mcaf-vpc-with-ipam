@@ -58,7 +58,7 @@ data "aws_iam_policy_document" "vpc_flow_log" {
       "logs:DescribeLogStreams",
     ]
 
-    resources = ["arn:aws:logs:${local.region}:${data.aws_caller_identity.default.account_id}:log-group:*:*"]
+    resources = ["arn:aws:logs:${local.region}:${local.account_id}:log-group:*:*"]
   }
 }
 
