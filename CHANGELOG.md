@@ -5,6 +5,16 @@ All notable changes to this project will automatically be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v5.6.2 - 2026-06-10
+
+### What's Changed
+
+#### 🐛 Bug Fixes
+
+* fix: source flow-log policy account ID from the VPC instead of caller identity (#35) @marwinbaumannsbp
+
+**Full Changelog**: https://github.com/schubergphilis/terraform-aws-mcaf-vpc-with-ipam/compare/v5.6.1...v5.6.2
+
 ## v5.6.1 - 2026-05-18
 
 ### What's Changed
