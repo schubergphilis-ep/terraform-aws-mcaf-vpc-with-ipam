@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [5.6.3](https://github.com/schubergphilis-ep/terraform-aws-mcaf-vpc-with-ipam/compare/v5.6.2...v5.6.3) (2026-07-07)
+
+
+### 🐛 Fixes
+
+* migrate MCAF module sources ([#2](https://github.com/schubergphilis-ep/terraform-aws-mcaf-vpc-with-ipam/issues/2)) ([60bb182](https://github.com/schubergphilis-ep/terraform-aws-mcaf-vpc-with-ipam/commit/60bb1826497c22d1812414785959c393260ab835))
+
 ## [5.6.2](https://github.com/schubergphilis-ep/terraform-aws-mcaf-vpc-with-ipam/compare/v5.6.1...v5.6.2) (2026-06-10)
 
 
@@ -223,4 +230,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🚀 Features
 
 * initial code ([#1](https://github.com/schubergphilis/terraform-aws-mcaf-vpc-with-ipam/pull/1)) ([8bf4d33](https://github.com/schubergphilis-ep/terraform-aws-mcaf-vpc-with-ipam/commit/8bf4d337ee8ec41b1031f8c4f10bfe6f52106b53))
-
