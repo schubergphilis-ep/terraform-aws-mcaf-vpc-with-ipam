@@ -5,7 +5,7 @@ provider "aws" {
 data "aws_availability_zones" "default" {}
 
 module "transit_gateway" {
-  source  = "schubergphilis/mcaf-transit-gateway/aws"
+  source  = "schubergphilis-ep/mcaf-transit-gateway/aws"
   version = "~> 0.6"
 
   name                                           = "transit-gateway"

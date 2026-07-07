@@ -43,7 +43,7 @@ module "hub_vpc" {
 
 
 module "security_group" {
-  source  = "schubergphilis/mcaf-security-group/aws"
+  source  = "schubergphilis-ep/mcaf-security-group/aws"
   version = "~> 2.0"
 
   description = "VPC endpoint security group"

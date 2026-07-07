@@ -32,7 +32,7 @@ This module will be merged with the [terraform-aws-mcaf-vpc](https://github.com/
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_log_bucket"></a> [log\_bucket](#module\_log\_bucket) | schubergphilis/mcaf-s3/aws | ~> 3.0.0 |
+| <a name="module_log_bucket"></a> [log\_bucket](#module\_log\_bucket) | schubergphilis-ep/mcaf-s3/aws | ~> 3.0.0 |
 | <a name="module_vpc_endpoints"></a> [vpc\_endpoints](#module\_vpc\_endpoints) | ./modules/vpc-endpoints | n/a |
 
 ## Resources
